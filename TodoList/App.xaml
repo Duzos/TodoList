@@ -1,0 +1,32 @@
+﻿<Application x:Class="TodoList.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TodoList"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <SolidColorBrush x:Key="BackgroundColour">#211E2B</SolidColorBrush>
+        <SolidColorBrush x:Key="GridBackgroundColour">#312C40</SolidColorBrush>
+        <SolidColorBrush x:Key="GridLineColour">#4F4867</SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonColour">#A393D9</SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonHoverColour">#BFB3E8</SolidColorBrush>
+        <SolidColorBrush x:Key="TextColour">#EBEBEB</SolidColorBrush>
+        <SolidColorBrush x:Key="CheckColour">#AADB7F</SolidColorBrush>
+        <SolidColorBrush x:Key="CrossColour">#ED5858</SolidColorBrush>
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource ButtonColour}"  />
+            <Setter Property="BorderBrush" Value="{StaticResource GridLineColour}"  />
+            <Setter Property="FontFamily" Value="GlobalUserInterface"/>
+            <Setter Property="TextElement.Foreground" Value="{StaticResource TextColour}"/>
+            <Setter Property="TextOptions.TextRenderingMode" Value="Aliased"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{StaticResource ButtonHoverColour}">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>
