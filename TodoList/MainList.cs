@@ -14,15 +14,19 @@ namespace TodoList
             List = new List<TodoObject>();
         }
 
-        public void add(TodoObject obj)
+        public void Add(TodoObject obj)
         {
             List.Add(obj);
         }
-        public void remove(TodoObject obj)
+        public void Remove(TodoObject obj)
         {
             if (!List.Contains(obj)) { return; }
 
             List.Remove(obj);
+        }
+
+        public List<TodoObject>.Enumerator GetEnumerator() {
+            return this.List.GetEnumerator();
         }
     }
 }

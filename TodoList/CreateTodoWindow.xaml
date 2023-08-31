@@ -1,15 +1,14 @@
-﻿<Window x:Class="TodoList.MainWindow"
+﻿<Window x:Class="TodoList.CreateTodoWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TodoList"
         mc:Ignorable="d"
-        Loaded="Window_Loaded"
         Background="{StaticResource BackgroundColour}"
         Foreground="{StaticResource TextColour}"
         WindowStartupLocation="CenterScreen"
-        Title="Todo List" Height="480" Width="400">
+        Title="Add new todo" Height="400" Width="350">
     <Viewbox>
         <Grid>
             <Grid.RowDefinitions>
@@ -20,7 +19,7 @@
             <TextBlock x:Name="TitleText"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   Text="TODO:"
+                   Text="Create new Todo"
                    FontSize="22"
                    Margin="10" FontFamily="Global User Interface"/>
             <Border x:Name="ListBorder"
@@ -32,28 +31,28 @@
                 Margin="20,0,20,20" 
                 Grid.Row="1">
                 <UniformGrid x:Name="MainGrid"
-                         Width="400"
-                         Height="500"
+                         Width="250"
+                         Height="250"
                          Background="{StaticResource GridBackgroundColour}"
                          SnapsToDevicePixels="True"
                          RenderOptions.BitmapScalingMode="HighQuality">
-                    <Button x:Name="CreateTodoButton" 
-                            Style="{StaticResource CustomButtonStyle}"
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="Top" 
-                    Margin="20,20,0,0" 
-                    RenderTransformOrigin="0.5,0.5" 
-                    Grid.Row="1" 
-                    Click="CreateTodo_Click" 
-                    Height="20" 
-                    Width="20" 
-                    Content="+" 
-                    FontSize="25" 
-                    Padding="0,-6.25,0,0"
-                    VerticalContentAlignment="Center"
-                    FontWeight="SemiBold"/>
                 </UniformGrid>
             </Border>
+            <TextBlock x:Name="NameText"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Text="Name :"
+                FontSize="22"
+                FontFamily="Global User Interface" Margin="30,10,0,0" Grid.Row="1"/>
+            <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Margin="30,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+            <TextBlock x:Name="DescText"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Text="Description :"
+                FontSize="22"
+                FontFamily="Global User Interface" Margin="30,55,0,0" Grid.Row="1"/>
+            <TextBox x:Name="DescTextBox" HorizontalAlignment="Left" Margin="30,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200" Grid.Row="1"/>
+            <Button Style="{StaticResource CustomButtonStyle}" x:Name="DoneButton" Content="Done" HorizontalAlignment="Left" Margin="30,110,0,0" VerticalAlignment="Top" Grid.Row="1" Height="35" Width="70" Click="DoneButton_Click"/>
         </Grid>
     </Viewbox>
 </Window>
